@@ -8,7 +8,7 @@ var direction = Vector2()
 var velocity = Vector2()
 
 func shoot():
-	pass
+	print("pew")
 	
 func get_input ():
 	direction.x = 0
@@ -22,3 +22,6 @@ func get_input ():
 func _ready():
 	pass
 
+func _physics_process(delta):
+	get_input()
+	move_and_slide(direction * speed)
