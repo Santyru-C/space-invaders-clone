@@ -19,11 +19,12 @@ func get_input ():
 	if Input.is_action_pressed("ui_left"):
 		direction.x = -1
 	if Input.is_action_just_pressed("ui_accept"):
-		shoot() # and not bullet instance
+		if !get_parent().has_node("Proyectile"):
+			shoot()
 		
 func _ready():
 	pass
 
 func _physics_process(_delta):
 	get_input()
-	var collision = move_and_slide(direction * speed)
+	var _collision = move_and_slide(direction * speed)
