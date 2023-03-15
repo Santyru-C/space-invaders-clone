@@ -10,6 +10,7 @@ var velocity = Vector2()
 func shoot():
 	var bullet = bullet_scene.instance()
 	get_parent().add_child(bullet)
+	bullet.position = $Position2D.global_position
 	
 func get_input ():
 	direction.x = 0
