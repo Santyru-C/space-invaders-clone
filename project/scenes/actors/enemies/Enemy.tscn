@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Enemy" type="KinematicBody2D"]
+
+[node name="EnemySprite" type="Sprite" parent="."]
+scale = Vector2( 20, 20 )
+
+[node name="EnemyColShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
