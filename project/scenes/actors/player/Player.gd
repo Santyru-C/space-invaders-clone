@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export(int) var speed = 400
-var bullet_scene = preload("res://scenes/actors/player/Proyectile.tscn")
+var bullet_scene = preload("res://scenes/actors/player/Bullet.tscn")
 
 var lifes = 3
 var direction = Vector2()
@@ -19,7 +19,7 @@ func get_input ():
 	if Input.is_action_pressed("ui_left"):
 		direction.x = -1
 	if Input.is_action_just_pressed("ui_accept"):
-		if !get_parent().has_node("Proyectile"):
+		if !get_parent().has_node("Bullet"):
 			shoot()
 		
 func _ready():
