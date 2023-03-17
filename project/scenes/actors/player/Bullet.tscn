@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/sprites/placeholder_white.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Proyectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/actors/Proyectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/actors/player/Bullet.gd" type="Script" id=3]
 
 [node name="Bullet" instance=ExtResource( 2 )]

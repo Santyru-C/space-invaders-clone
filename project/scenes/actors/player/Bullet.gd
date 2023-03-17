@@ -1,1 +1,1 @@
-extends "res://scenes/Proyectile.gd"
+extends "res://scenes/actors/Proyectile.gd"
