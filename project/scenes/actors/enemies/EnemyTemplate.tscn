@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/actors/enemies/EnemyTemplate.gd" type="Script" id=1]
+[ext_resource path="res://scenes/actors/ShipTemplate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/placeholder_white.png" type="Texture" id=3]
+[ext_resource path="res://scenes/actors/enemies/Beam.tscn" type="PackedScene" id=4]
+
+[node name="EnemyTemplate" instance=ExtResource( 2 )]
+position = Vector2( 512, 320 )
+script = ExtResource( 1 )
+proyectile_scene = ExtResource( 4 )
+cadence = 150
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 48, 48 )
+texture = ExtResource( 3 )
+
+[node name="Position2D" parent="." index="2"]
+position = Vector2( 0, 30 )
