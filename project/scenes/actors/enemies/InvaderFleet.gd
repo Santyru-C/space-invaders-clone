@@ -1,34 +1,24 @@
 extends Area2D
-var test_enemy = preload("res://scenes/actors/enemies/Enemy1.tscn")
+const fleet_column_scene = preload("res://scenes/actors/enemies/FleetColumn.tscn")
 var direction = 1
 
-func conect_ship_signal():
-	pass
 func get_colored_brick(color):
 	var formated_string = "res://scenes/%s_brick.tscn" % color
 	var colored_brick_scene = load(formated_string)
 	var colored_brick = colored_brick_scene.instance()
 	return colored_brick
 
-func place_invader(invader, position_x, position_y):
-	invader.set_position(Vector2(position_x, position_y))
+func place_invader(invader, position_x):
+	invader.set_position(Vector2(position_x, 48))
 	call_deferred("add_child", invader)
 	
 func generate_enemy_fleet():
-	var row_enemy_pattern = ["1", "2", "2", "3", "3"]
-	var position_y = 48
-	# var current_color = ""
-	for row in 5:
-		var position_x = 74
-		# current_color = row_color_patter4n[row]
+		var position_x = -396
 		for column in 11:
 			if column != 1:
-				position_x += 80
-			var enemy = test_enemy.instance()
-			place_invader(enemy, position_x, position_y)
-			
-		position_y += 64
-
+				position_x += 72
+			var fleet_column = fleet_column_scene.instance()
+			place_invader(fleet_column, position_x)
 func _ready():
 	generate_enemy_fleet()
 

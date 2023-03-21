@@ -7,11 +7,13 @@
 extents = Vector2( 392, 8 )
 
 [node name="InvaderFleet" type="Area2D"]
-position = Vector2( 0, 56 )
+position = Vector2( 512, 64 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 512, 0 )
+[node name="FleetBoundary" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -19,7 +21,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 512, -4.76837e-07 )
+visible = false
 scale = Vector2( 784, 16 )
 texture = ExtResource( 2 )
 
