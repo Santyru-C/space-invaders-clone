@@ -9,11 +9,22 @@
 position = Vector2( 512, 320 )
 script = ExtResource( 1 )
 proyectile_scene = ExtResource( 4 )
-cadence = 150
+cadence = 1000
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 48, 48 )
 texture = ExtResource( 3 )
 
 [node name="Position2D" parent="." index="2"]
-position = Vector2( 0, 30 )
+position = Vector2( 0, 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Position2D" index="0"]
+visible = false
+position = Vector2( -7.62939e-06, 7.62939e-06 )
+scale = Vector2( 16, 16 )
+texture = ExtResource( 3 )
+
+[connection signal="area_entered" from="." to="." method="_on_EnemyTemplate_area_entered"]
