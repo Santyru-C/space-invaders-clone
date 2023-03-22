@@ -12,3 +12,5 @@ proyectile_speed = 400
 position = Vector2( 4, 4 )
 scale = Vector2( 8, 24 )
 texture = ExtResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_Beam_area_entered"]
