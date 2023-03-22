@@ -17,7 +17,6 @@ func _on_column_down():
 func place_invader(invader, position_x):
 	invader.set_position(Vector2(position_x, 48))
 	self.add_child(invader)
-	#call_deferred("add_child", invader)
 	
 func generate_enemy_fleet():
 		var position_x = -362
