@@ -30,8 +30,7 @@ func generate_enemy_fleet():
 			
 func _ready():
 	generate_enemy_fleet()
-	print(self.get_children())
-
+	
 func _on_Timer_timeout():
 	position += transform.x * -10 * direction
 

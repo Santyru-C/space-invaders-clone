@@ -13,7 +13,17 @@ func get_input ():
 	if Input.is_action_just_pressed("ui_accept"):
 		if !get_tree().get_root().has_node("Bullet"):
 			shoot()
-		print(get_parent().get_children())
+			
 func _physics_process(delta):
 	get_input()
 	position += transform.x * direction * speed * delta
+
+func life_down():
+	lifes -= 1
+	if lifes == 0:
+		self.queue_free()
+
+func _on_Player_area_entered(area):
+	print(area)
+	if "Beam" in area.get_name():
+		life_down()

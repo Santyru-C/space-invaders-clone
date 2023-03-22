@@ -17,3 +17,5 @@ texture = ExtResource( 3 )
 
 [node name="Position2D" parent="." index="2"]
 position = Vector2( 4, -40 )
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
