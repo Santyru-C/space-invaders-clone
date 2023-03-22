@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/actors/enemies/InvaderFleet.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 224 )
+extents = Vector2( 8, 192 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -20,7 +20,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftTrigger"]
-position = Vector2( 0, -32 )
 shape = SubResource( 1 )
 
 [node name="RightTrigger" type="Area2D" parent="."]
@@ -30,8 +29,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightTrigger"]
-position = Vector2( 0, -32 )
 shape = SubResource( 1 )
 
 [node name="InvaderFleet" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 40 )
