@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=3]
 [ext_resource path="res://scenes/actors/player/Player.gd" type="Script" id=4]
 
-[node name="PlayerTest" instance=ExtResource( 1 )]
+[node name="Player" instance=ExtResource( 1 )]
 position = Vector2( 520, 344 )
 script = ExtResource( 4 )
 proyectile_scene = ExtResource( 2 )
