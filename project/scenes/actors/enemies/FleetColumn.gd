@@ -1,11 +1,19 @@
 extends Area2D
-
+signal column_down
 var ships = 5
 
-func get_enemy_type(type):
+
+func _on_ship_down():
+	ships -= 1
+	
+	if ships == 0:
+		self.queue_free()
+		emit_signal("column_down")
+func prepare_enemy_type(type):
 	var formated_string = "res://scenes/actors/enemies/Enemy%s.tscn" % type
 	var enemy_scene = load(formated_string)
 	var enemy = enemy_scene.instance()
+	enemy.connect("ship_down", self, "_on_ship_down")
 	return enemy
 
 func place_invader(invader, position_y):
@@ -15,9 +23,9 @@ func place_invader(invader, position_y):
 func generate_invader_column():
 	var column_pattern = ["1", "2", "2", "3", "3"]
 	var position_y = 0
-	# var current_color = ""
-	for row in 5:
-		var current_enemy = get_enemy_type(column_pattern[row])
+	
+	for row in ships:
+		var current_enemy = prepare_enemy_type(column_pattern[row])
 		place_invader(current_enemy, position_y)
 		position_y += 56
 	
