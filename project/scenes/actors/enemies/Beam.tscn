@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/actors/enemies/Beam.gd" type="Script" id=2]
 [ext_resource path="res://scenes/actors/Proyectile.tscn" type="PackedScene" id=3]
 
-[node name="Proyectile" instance=ExtResource( 3 )]
+[node name="Beam" instance=ExtResource( 3 )]
 script = ExtResource( 2 )
 proyectile_speed = 400
 
