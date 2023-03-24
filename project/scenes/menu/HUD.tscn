@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 832.0
+margin_bottom = 256.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 344.0
+margin_right = 576.0
+margin_bottom = 384.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 544.0
+margin_right = 200.0
+margin_bottom = 576.0
+
+[node name="ScoreLabel2" type="Label" parent="."]
+margin_left = 824.0
+margin_top = 544.0
+margin_right = 960.0
+margin_bottom = 576.0
