@@ -12,9 +12,15 @@ func set_scene_instance(scene, pos):
 	scene_instance.set_position(pos)
 	self.add_child(scene_instance)
 	return scene_instance
+	
+func _on_player_hit():
+	print(current_player_instance.lifes)
+	$HUD.update_LifeLabel(current_player_instance.lifes)
 
 func new_game():
 	current_player_instance = set_scene_instance(player_scene, player_position)
+	current_player_instance.connect("player_hit", self, "_on_player_hit")
+	current_player_instance.connect("player_dead", self, "_on_player_dead")
 	set_scene_instance(invader_fleet_scene, fleet_position)
 	$HUD.update_LifeLabel(str(current_player_instance.lifes))
 	$HUD.update_ScoreLabel(str(score))
