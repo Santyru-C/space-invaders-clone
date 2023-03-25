@@ -1,4 +1,5 @@
 extends "res://scenes/actors/ShipTemplate.gd"
+signal player_hit
 
 var lifes = 3
 var direction = Vector2()
@@ -26,4 +27,5 @@ func life_down():
 func _on_Player_area_entered(area):
 	print(area)
 	if "Beam" in area.get_name():
+		emit_signal("player_hit")
 		life_down()
