@@ -1,5 +1,6 @@
 extends "res://scenes/actors/ShipTemplate.gd"
 signal player_hit
+signal player_dead
 
 var lifes = 3
 var direction = Vector2()
@@ -23,9 +24,10 @@ func life_down():
 	lifes -= 1
 	if lifes == 0:
 		self.queue_free()
+		emit_signal("player_dead")
 
 func _on_Player_area_entered(area):
 	print(area)
 	if "Beam" in area.get_name():
-		emit_signal("player_hit")
 		life_down()
+		emit_signal("player_hit")
