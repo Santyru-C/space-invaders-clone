@@ -10,13 +10,19 @@ var score = 0
 func set_scene_instance(scene, pos):
 	var scene_instance = scene.instance()
 	scene_instance.set_position(pos)
-	self.add_child(scene_instance)
+	$Space.add_child(scene_instance)
 	return scene_instance
 	
 func _on_player_hit():
 	print(current_player_instance.lifes)
 	$HUD.update_LifeLabel(current_player_instance.lifes)
 
+func game_over():
+	pass 
+	
+func _on_player_dead():
+	print("Game over")
+	
 func new_game():
 	current_player_instance = set_scene_instance(player_scene, player_position)
 	current_player_instance.connect("player_hit", self, "_on_player_hit")
