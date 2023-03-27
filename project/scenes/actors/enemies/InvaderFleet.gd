@@ -7,7 +7,7 @@ func _on_column_area_entered(area):
 	if "Trigger" in area.get_name():
 		print("entered: ", area)
 		direction *= -1
-		position += transform.y * 5
+		position += transform.y * 8
 
 func _on_column_down():
 	fleet_columns -= 1
@@ -33,12 +33,3 @@ func _ready():
 	
 func _on_Timer_timeout():
 	position += transform.x * -10 * direction
-
-
-func _on_InvaderFleet_area_entered(_area):
-	pass
-	#if "Trigger" in area.get_name():
-	#	direction *= -1
-	#	position += transform.y * 4
-	
-
