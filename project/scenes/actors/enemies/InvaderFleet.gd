@@ -1,17 +1,18 @@
 extends Area2D
 const fleet_column_scene = preload("res://scenes/actors/enemies/FleetColumn.tscn")
+signal fleet_defeated
 var fleet_columns = 11
 var direction = 1
 
 func _on_column_area_entered(area):
 	if "Trigger" in area.get_name():
-		print("entered: ", area)
 		direction *= -1
 		position += transform.y * 8
 
 func _on_column_down():
 	fleet_columns -= 1
 	if fleet_columns == 0:
+		emit_signal("fleet_defeated")
 		self.queue_free()
 	
 func place_invader(invader, position_x):
