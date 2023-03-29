@@ -29,6 +29,4 @@ shape = SubResource( 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
-[node name="Space" type="Node" parent="."]
-
 [connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]

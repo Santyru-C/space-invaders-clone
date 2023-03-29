@@ -7,6 +7,10 @@ const fleet_position = Vector2(512, 16)
 var current_player_instance = null
 var score = 0
 
+func _add_score(value):
+	score += value
+	$HUD.update_ScoreLabel(str(score))
+	
 func set_scene_instance(scene, pos):
 	var scene_instance = scene.instance()
 	scene_instance.set_position(pos)
@@ -18,12 +22,17 @@ func _on_player_hit():
 	$HUD.update_LifeLabel(current_player_instance.lifes)
 
 func game_over():
-	pass 
+	$Space.queue_free()
+	$HUD.call_game_over_screen()
 	
 func _on_player_dead():
-	print("Game over")
+	game_over()
 	
 func new_game():
+	score = 0
+	var space = Node.new()
+	space.name = "Space"
+	self.add_child(space)
 	current_player_instance = set_scene_instance(player_scene, player_position)
 	current_player_instance.connect("player_hit", self, "_on_player_hit")
 	current_player_instance.connect("player_dead", self, "_on_player_dead")
