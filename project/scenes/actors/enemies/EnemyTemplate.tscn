@@ -9,7 +9,7 @@
 position = Vector2( 512, 320 )
 script = ExtResource( 1 )
 proyectile_scene = ExtResource( 4 )
-cadence = 1000
+shot_interval = 1000
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 48, 48 )
