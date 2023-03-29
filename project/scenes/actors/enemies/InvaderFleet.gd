@@ -1,5 +1,6 @@
 extends Area2D
 const fleet_column_scene = preload("res://scenes/actors/enemies/FleetColumn.tscn")
+const mothership_scene = preload("res://scenes/actors/enemies/MotherShip.tscn")
 signal fleet_defeated
 var fleet_columns = 11
 var direction = 1
@@ -34,3 +35,10 @@ func _ready():
 	
 func _on_Timer_timeout():
 	position += transform.x * -10 * direction
+
+
+func _on_MotherShipTimer_timeout():
+	var mothership = mothership_scene.instance()
+	mothership.set_position(Vector2(1024, 48))
+	get_tree().get_root().add_child(mothership)
+	mothership.connect("add_score", get_tree().current_scene, "_add_score")

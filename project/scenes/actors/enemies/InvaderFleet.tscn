@@ -7,7 +7,7 @@
 extents = Vector2( 392, 8 )
 
 [node name="InvaderFleet" type="Area2D"]
-position = Vector2( 512, 64 )
+position = Vector2( 512, 104 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -25,5 +25,9 @@ visible = false
 scale = Vector2( 784, 16 )
 texture = ExtResource( 2 )
 
-[connection signal="area_entered" from="." to="." method="_on_InvaderFleet_area_entered"]
+[node name="MotherShipTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="MotherShipTimer" to="." method="_on_MotherShipTimer_timeout"]

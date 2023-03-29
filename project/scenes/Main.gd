@@ -2,7 +2,7 @@ extends Node
 const player_scene = preload("res://scenes/actors/player/Player.tscn")
 const invader_fleet_scene = preload("res://scenes/actors/enemies/InvaderFleet.tscn")
 const player_position = Vector2(512, 536)
-const fleet_position = Vector2(512, 16)
+const fleet_position = Vector2(512, 64)
 
 var current_player_instance
 var current_fleet_instance
