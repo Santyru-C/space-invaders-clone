@@ -21,6 +21,7 @@ __meta__ = {
 }
 
 [node name="CollisionSprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, 112 )
 scale = Vector2( 64, 288 )
 texture = ExtResource( 2 )

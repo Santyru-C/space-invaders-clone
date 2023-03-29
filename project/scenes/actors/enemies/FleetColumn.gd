@@ -9,11 +9,13 @@ func _on_ship_down():
 	if ships == 0:
 		self.queue_free()
 		emit_signal("column_down")
+		
 func prepare_enemy_type(type):
 	var formated_string = "res://scenes/actors/enemies/Enemy%s.tscn" % type
 	var enemy_scene = load(formated_string)
 	var enemy = enemy_scene.instance()
 	enemy.connect("ship_down", self, "_on_ship_down")
+	enemy.connect("add_score", get_tree().current_scene, "_add_score")
 	return enemy
 
 func place_invader(invader, position_y):

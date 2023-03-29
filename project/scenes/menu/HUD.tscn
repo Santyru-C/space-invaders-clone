@@ -50,11 +50,17 @@ margin_left = 784.0
 margin_top = 560.0
 margin_right = 952.0
 margin_bottom = 592.0
+rect_pivot_offset = Vector2( -952, -296 )
 custom_fonts/font = SubResource( 1 )
 valign = 2
 
 [node name="FinalScoreLabel" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 424.0
+margin_top = 256.0
+margin_right = 600.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( -952, -296 )
+custom_fonts/font = SubResource( 1 )
+valign = 2
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
