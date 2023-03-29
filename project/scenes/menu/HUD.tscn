@@ -53,4 +53,8 @@ margin_bottom = 592.0
 custom_fonts/font = SubResource( 1 )
 valign = 2
 
+[node name="FinalScoreLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
