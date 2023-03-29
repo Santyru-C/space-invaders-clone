@@ -6,7 +6,10 @@
 [node name="MotherShip" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 proyectile_scene = null
-shot_interval = 0
+speed = 200
+shot_interval = -1
 score_amount = 100
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="3"]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

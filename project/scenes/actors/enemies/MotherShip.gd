@@ -1,4 +1,8 @@
 extends "res://scenes/actors/enemies/EnemyTemplate.gd"
 
-func _ready():
-	pass
+func _physics_process(delta):
+	position += transform.x * -speed * delta
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	self.queue_free()
