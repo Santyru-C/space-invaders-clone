@@ -24,6 +24,7 @@ func _on_player_hit():
 func game_over():
 	$Space.queue_free()
 	$HUD.call_game_over_screen()
+	$HUD.update_FinalScoreLabel(score)
 	
 func _on_player_dead():
 	game_over()
