@@ -4,7 +4,8 @@ const invader_fleet_scene = preload("res://scenes/actors/enemies/InvaderFleet.ts
 const player_position = Vector2(512, 536)
 const fleet_position = Vector2(512, 16)
 
-var current_player_instance = null
+var current_player_instance
+var current_fleet_instance
 var score = 0
 
 func _add_score(value):
@@ -29,15 +30,21 @@ func game_over():
 func _on_player_dead():
 	game_over()
 	
+func _on_fleet_defeated():
+	game_over()
+	
 func new_game():
 	score = 0
 	var space = Node.new()
 	space.name = "Space"
 	self.add_child(space)
+	
 	current_player_instance = set_scene_instance(player_scene, player_position)
 	current_player_instance.connect("player_hit", self, "_on_player_hit")
 	current_player_instance.connect("player_dead", self, "_on_player_dead")
-	set_scene_instance(invader_fleet_scene, fleet_position)
+	
+	current_fleet_instance = set_scene_instance(invader_fleet_scene, fleet_position)
+	current_fleet_instance.connect("fleet_defeated", self, "_on_fleet_defeated")
 	$HUD.update_LifeLabel(str(current_player_instance.lifes))
 	$HUD.update_ScoreLabel(str(score))
 
