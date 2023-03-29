@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/sprites/placeholder_red.png" type="Texture" id=2]
 
 [node name="Enemy1" instance=ExtResource( 1 )]
+score_amount = 30
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
