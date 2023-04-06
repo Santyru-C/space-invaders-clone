@@ -14,7 +14,7 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
-"speed": 4.0
+"speed": 2.0
 } ]
 
 [node name="Enemy1" instance=ExtResource( 1 )]
@@ -32,6 +32,6 @@ position = Vector2( 0, 25 )
 
 [node name="AnimatedSprite" parent="." index="3"]
 frames = SubResource( 1 )
-frame = 5
+frame = 2
 
 [connection signal="item_rect_changed" from="." to="." method="_on_Enemy1_item_rect_changed"]
