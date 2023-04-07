@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/Starfield.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 273 )
+extents = Vector2( 7.5, 260 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -17,7 +17,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftTrigger"]
-position = Vector2( 0, 54 )
+position = Vector2( 0, 40 )
 shape = SubResource( 1 )
 
 [node name="RightTrigger" type="Area2D" parent="."]
@@ -27,12 +27,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightTrigger"]
-position = Vector2( 0, 27 )
+position = Vector2( 0, 40 )
 shape = SubResource( 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 margin_right = 1028.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
