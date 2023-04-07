@@ -41,7 +41,7 @@ Provide various use cases and code examples here.
 Project is: _in progress_ <!--/ _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.-->
 
 
-## Room for Improvement
+<!--## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
