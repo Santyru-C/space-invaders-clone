@@ -8,7 +8,7 @@ func update_FinalScoreLabel(value):
 	$FinalScoreLabel.text = "Score: %s" % value
 
 func update_LifeLabel(value):
-	$LifeLabel.text = "Life: %s" % value
+	$LifeLabel.text = "Lifes: %s" % value
 	
 func _ready():
 	$LifeLabel.hide()
