@@ -32,6 +32,5 @@ position = Vector2( 0, 25 )
 
 [node name="AnimatedSprite" parent="." index="3"]
 frames = SubResource( 1 )
-frame = 2
 
 [connection signal="item_rect_changed" from="." to="." method="_on_Enemy1_item_rect_changed"]

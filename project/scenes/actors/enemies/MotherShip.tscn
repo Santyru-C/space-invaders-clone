@@ -12,4 +12,7 @@ score_amount = 100
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="3"]
 
+[node name="AnimatedSprite" parent="." index="4"]
+frame = 2
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

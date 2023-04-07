@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/actors/enemies/EnemyTemplate.gd" type="Script" id=1]
 [ext_resource path="res://scenes/actors/ShipTemplate.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprites/placeholder_white.png" type="Texture" id=3]
 [ext_resource path="res://scenes/actors/enemies/Beam.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/Enemigo1/Enemigo 2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Enemigo1/Enemigo 1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Enemigo1/Enemigo 3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Enemigo1/Enemigo 4.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Enemigo1/Enemigo 5.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/Enemigo1/Enemigo 6.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="EnemyTemplate" instance=ExtResource( 2 )]
 position = Vector2( 512, 320 )
@@ -11,8 +25,10 @@ script = ExtResource( 1 )
 proyectile_scene = ExtResource( 4 )
 shot_interval = 1000
 score_amount = 0
+animation_frames = 6
 
 [node name="Sprite" parent="." index="0"]
+visible = false
 scale = Vector2( 48, 48 )
 texture = ExtResource( 3 )
 
@@ -28,4 +44,10 @@ position = Vector2( -7.62939e-06, 7.62939e-06 )
 scale = Vector2( 16, 16 )
 texture = ExtResource( 3 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+frames = SubResource( 1 )
+frame = 5
+playing = true
+
 [connection signal="area_entered" from="." to="." method="_on_EnemyTemplate_area_entered"]
+[connection signal="item_rect_changed" from="." to="." method="_on_EnemyTemplate_item_rect_changed"]
