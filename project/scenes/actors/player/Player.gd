@@ -4,7 +4,6 @@ signal player_dead
 
 var lifes = 3
 var direction = Vector2()
-var velocity = Vector2()
 
 func get_input ():
 	direction.x = 0
@@ -19,7 +18,8 @@ func get_input ():
 func _physics_process(delta):
 	get_input()
 	position += transform.x * direction * speed * delta
-
+	speed = 400
+	
 func life_down():
 	lifes -= 1
 	if lifes == 0:
@@ -31,3 +31,8 @@ func _on_Player_area_entered(area):
 	if "Beam" in area.get_name():
 		life_down()
 		emit_signal("player_hit")
+		
+	if "Enemy" in area.get_name():
+		self.queue_free()
+		emit_signal("player_dead")
+		
